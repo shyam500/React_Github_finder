@@ -1,0 +1,17 @@
+.container {
+  width: 80vw;
+  height: 60vh;
+  margin: auto;
+  display: grid;
+  place-content: center;
+  text-align: center;
+}
+
+.container > h1 {
+  color: rgb(66, 66, 66);
+  font: italic normal 1.4rem "poppins";
+}
+
+.container > p {
+    color: rgb(100, 100, 100);
+}
