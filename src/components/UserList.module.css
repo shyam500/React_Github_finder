@@ -1,0 +1,45 @@
+.User_container {
+  max-width: 100vw;
+  height: 60vh;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.each_profile {
+  height: 110px;
+  min-width: 250px;
+  border: 1px solid red;
+  margin-top: 1rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.each_profile > div {
+  height: 100%;
+  width: 60%;
+  border: 1px solid blue;
+  padding: 0px 8px;
+}
+
+.each_profile > div > h2 {
+  font-size: 1.1rem;
+  color: rgb(122, 122, 122);
+}
+
+.each_profile > div > h2:hover {
+    text-decoration: underline;
+}
+
+
+.each_profile > div > p {
+    font-size: 1rem;
+}
+
+.each_profile > img {
+  width: 40%;
+  height: 100%;
+  object-fit: cover;
+}
