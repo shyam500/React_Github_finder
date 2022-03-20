@@ -8,12 +8,17 @@ import logo from "E:/projects/github/files/logo.png";
 const Home = () => {
   const [userList, setUserList] = useState([]);
   const [search, setSearch] = useState(false);
+  const [user,setUser]=useState('');
 
   async function getData(url) {
     const response = await fetch(url);
     const data = await response.json();
     setUserList(data);
   }
+
+  const getUserName = (userName) => {
+    setUser(userName)
+  };
 
   useEffect(() => {
     getData("https://api.github.com/users");
@@ -26,8 +31,8 @@ const Home = () => {
         <img src={logo} alt="logo" />
       </header>
       <Search />
-      {search && <Profile />}
-      <UserList users={userList} />
+      {search && <Profile user={user} />}
+      <UserList users={userList} getName={getUserName} search={setSearch}/>
       <footer>
         <p>Github_finder &copy; 2022</p>
       </footer>

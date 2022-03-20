@@ -1,7 +1,13 @@
 import { Fragment } from "react";
 import classes from "./UserList.module.css";
 
-const UserList = ({ users }) => {
+const UserList = ({ users, getName, search }) => {
+
+  const onclickHandler = (user) => {
+    getName(user);
+    search(true);
+  };
+
   return (
     <Fragment>
       <h2>Top users</h2>
@@ -14,7 +20,7 @@ const UserList = ({ users }) => {
             <span className={classes.each_profile} key={item.id}>
               <img src={item.avatar_url} alt="Profile Picture" />
               <div>
-                <h2>{item.login}</h2>
+                <h2 onClick={()=>onclickHandler(item.login)}>{item.login}</h2>
                 <p>{item.type}</p>
               </div>
             </span>
