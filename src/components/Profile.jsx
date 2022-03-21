@@ -1,20 +1,24 @@
 import { useEffect, useState } from "react";
 import Err from "./Err";
 import classes from "./Profile.module.css";
+import Loader from "./Loader";
 
 const Profile = ({ user, search }) => {
   const [data, setData] = useState({});
   const [username, setUsername] = useState(user);
   const [err, setErr] = useState(false);
+  const [loading, setLoading] = useState(true);
 
   const getUser = async (url) => {
     try {
       const res = await fetch(url);
       const data = await res.json();
       setData(data);
-      setErr(false)
+      setErr(false);
+      setLoading(false);
     } catch (err) {
-        setErr(true)
+      setLoading(false);
+      setErr(true);
     }
   };
 
@@ -22,11 +26,17 @@ const Profile = ({ user, search }) => {
     getUser(`https://api.github.com/users/${username}`);
   }, [username]);
 
-  if(err){
-     return <Err/>
+  if(loading){
+    return(
+      <Loader/>
+    )
   }
 
-  if (!err) {
+  if (err && !loading) {
+    return <Err />;
+  }
+
+  if (!err&& !loading) {
     return (
       <section className={classes.User_container}>
         <span onClick={() => search(false)}>X</span>
@@ -51,7 +61,7 @@ const Profile = ({ user, search }) => {
         <h2>Single Profile</h2>
       </section>
     );
-  };
+  }
 };
 
 export default Profile;
