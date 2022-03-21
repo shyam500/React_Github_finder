@@ -25,7 +25,7 @@ const Home = () => {
       setLoading(false);
       setErr(true);
     }
-  };
+  }
 
   const searchUserFunction = (name) => {
     setLoading(false);
@@ -45,8 +45,10 @@ const Home = () => {
   return (
     <section className={classes.container}>
       <header className={classes.header}>
-        <h1>Github Finder</h1>
-        <img src={logo} alt="logo" />
+        <div>
+          <img src={logo} alt="logo" />
+          <h1>Github Finder</h1>
+        </div>
       </header>
       <Search searchName={searchUserFunction} />
       {loading && <Loader />}
@@ -56,7 +58,7 @@ const Home = () => {
         <UserList users={userList} getName={getUserName} search={setSearch} />
       )}
 
-      <footer>
+      <footer className={classes.footer} >
         <p>Github_finder &copy; 2022</p>
       </footer>
     </section>
