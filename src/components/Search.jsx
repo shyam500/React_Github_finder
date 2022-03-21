@@ -13,6 +13,8 @@ const Search = ({ searchName }) => {
   const inputChangeHandler = (e) => {
     setText(e.target.value);
   };
+
+  
   return (
     <section className={classes.User_container}>
       <form onSubmit={formSubmitHandler}>

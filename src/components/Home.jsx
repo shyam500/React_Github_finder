@@ -25,7 +25,7 @@ const Home = () => {
       setLoading(false);
       setErr(true);
     }
-  }
+  };
 
   const searchUserFunction = (name) => {
     setLoading(false);
