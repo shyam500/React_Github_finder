@@ -13,18 +13,18 @@ const Search = ({ searchName }) => {
   const inputChangeHandler = (e) => {
     setText(e.target.value);
   };
-
   
   return (
-    <section className={classes.User_container}>
+    <section className={classes.search_container}>
       <form onSubmit={formSubmitHandler}>
         <input
+         className={classes.input}
           type="text"
           placeholder="Search User"
           value={text}
           onChange={inputChangeHandler}
         />
-        <button type="submit">Search</button>
+        <button  className={classes.button} type="submit">Search</button>
       </form>
     </section>
   );

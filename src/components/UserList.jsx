@@ -14,7 +14,7 @@ const UserList = ({ users, getName, search }) => {
       <section className={classes.User_container}>
         {users.map((item, index) => {
           if (index > 8) {
-            return;
+            return; 
           }
           return (
             <span className={classes.each_profile} key={item.id}>

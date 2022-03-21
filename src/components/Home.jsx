@@ -58,7 +58,7 @@ const Home = () => {
         <UserList users={userList} getName={getUserName} search={setSearch} />
       )}
 
-      <footer className={classes.footer} >
+      <footer className={classes.footer}>
         <p>Github_finder &copy; 2022</p>
       </footer>
     </section>
