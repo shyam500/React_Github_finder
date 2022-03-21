@@ -10,7 +10,7 @@ const UserList = ({ users, getName, search }) => {
 
   return (
     <Fragment>
-      <h2>Top users</h2>
+      <h2 className={classes.heading}>Top users</h2>
       <section className={classes.User_container}>
         {users.map((item, index) => {
           if (index > 8) {
@@ -21,7 +21,7 @@ const UserList = ({ users, getName, search }) => {
               <img src={item.avatar_url} alt="Profile Picture" />
               <div>
                 <h2 onClick={()=>onclickHandler(item.login)}>{item.login}</h2>
-                <p>{item.type}</p>
+                <p>Account type : {item.type}</p>
               </div>
             </span>
           );
