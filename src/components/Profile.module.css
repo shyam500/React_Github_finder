@@ -1,6 +1,6 @@
 .User_container {
-  width: 90vw;
-  height: 65vh;
+  width: 70vw;
+  height: 75vh;
   margin-top: 1.3rem;
   border-radius: 10px;
   border: 1px solid rgb(122, 122, 122);
@@ -91,6 +91,12 @@
 
 .two > p:nth-child(4) {
   background-color: rgb(155, 2, 142);
+}
+
+@media screen and (max-width: 1190px) {
+  .data {
+    width: 100%;
+  }
 }
 
 @media screen and (max-width: 455px) {

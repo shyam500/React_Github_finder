@@ -50,7 +50,7 @@ const Home = () => {
           <h1>Github Finder</h1>
         </div>
       </header>
-      <Search searchName={searchUserFunction} />
+      {!search && <Search searchName={searchUserFunction} />}
       {loading && <Loader />}
       {err && !loading && <Err />}
       {!err && !loading && search && <Profile user={user} search={setSearch} />}
