@@ -26,39 +26,37 @@ const Profile = ({ user, search }) => {
     getUser(`https://api.github.com/users/${username}`);
   }, [username]);
 
-  if(loading){
-    return(
-      <Loader/>
-    )
+  if (loading) {
+    return <Loader />;
   }
 
   if (err && !loading) {
     return <Err />;
   }
 
-  if (!err&& !loading) {
+  if (!err && !loading) {
     return (
       <section className={classes.User_container}>
-        <span onClick={() => search(false)}>X</span>
+        <span className={classes.delBtn} onClick={() => search(false)}>
+          X
+        </span>
         <section className={classes.one}>
           <img src={data.avatar_url} alt="profile" />
           <div className={classes.data}>
-            <h1>{data.name}</h1>
-            <h2>User name : {data.login}</h2>
-            <p>Account type : {data.type}</p>
-            <p>Location : {data.location}</p>
-            <p>Company : {data.company}</p>
-            <p>Twitter : {data.twitter_username}</p>
-            <a href={data.url}>see in Github</a>
+            <h1>{data.name === null ? "Not Availiable" : data.name}</h1>
+            <h2>User name : {data.login === null ? "Not Availiable" : data.login}</h2>
+            <p>Account type : {data.type === null ? "Not Availiable" : data.type}</p>
+            <p>Location : {data.location=== null ? "Not Availiable" : data.location}</p>
+            <p>Company : {data.company=== null ? "Not Availiable" : data.company}</p>
+            <p>Twitter : {data.twitter_username=== null ? "Not Availiable" : data.twitter_username}</p>
           </div>
         </section>
         <section className={classes.two}>
           <p>public_repos : {data.public_repos}</p>
           <p>public_gists : {data.public_gists}</p>
-          <p>followers {data.followers}</p>
-          <p>following {data.following}</p>
+          <p>followers : {data.followers}</p>
+          <p>following : {data.following}</p>
         </section>
-        <h2>Single Profile</h2>
       </section>
     );
   }

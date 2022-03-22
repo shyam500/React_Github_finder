@@ -9,7 +9,7 @@ const Search = ({ searchName }) => {
     searchName(text);
     setText("");
   };
-
+ 
   const inputChangeHandler = (e) => {
     setText(e.target.value);
   };

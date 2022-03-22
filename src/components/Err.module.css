@@ -1,6 +1,6 @@
 .container {
-  width: 80vw;
-  height: 60vh;
+  width: 80vw; 
+  height: 72vh;
   margin: auto;
   display: grid;
   place-content: center;
@@ -10,8 +10,10 @@
 .container > h1 {
   color: rgb(66, 66, 66);
   font: italic normal 1.4rem "poppins";
+  font-size: 2.3rem;
 }
 
 .container > p {
     color: rgb(100, 100, 100);
+    font-size: 1.3rem;
 }

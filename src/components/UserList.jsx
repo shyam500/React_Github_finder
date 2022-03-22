@@ -6,14 +6,14 @@ const UserList = ({ users, getName, search }) => {
   const onclickHandler = (user) => {
     getName(user);
     search(true);
-  };
+  }; 
 
   return (
     <Fragment>
       <h2 className={classes.heading}>Top users</h2>
       <section className={classes.User_container}>
         {users.map((item, index) => {
-          if (index > 8) {
+          if (index > 7) {
             return; 
           }
           return (
